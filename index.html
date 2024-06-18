@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator using JS</title>
+</head>
+
+<body>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ccebff;
+        }
+
+        .app-title {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .calculator-container {
+            background-color: #88bbb2;
+            height: 400px;
+            width: 350px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 15px;
+            padding: 10px;
+        }
+
+        .calculator-screen {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 280px;
+            font-size: 50px;
+            border-radius: 5px;
+            border: none;
+            background-color: #e0a99f;
+        }
+
+        .brand-name {
+            text-align: right;
+            margin-right: 40px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .buttons-container {
+            margin-top: 20px;
+            margin-left: 30px;
+            margin-right: 30px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            font-size: 40px;
+            height: 50px;
+            width: 50px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #000;
+        }
+
+        .btn-special {
+            background-color: #ffc266;
+            color: white;
+        }
+
+        .btn:hover {
+            border-radius: 10px;
+            transition: 0.5s;
+            cursor: pointer;
+            box-shadow: 0 0 10px #fff;
+        }
+    </style>
+
+    <body>
+        <h1 class="app-title">Calculator</h1>
+
+        <div class="calculator-container">
+            <p class="brand-name">CASIO</p>
+
+            <input type="text" id="input" class="calculator-screen" />
+
+            <div class="buttons-container">
+                <button class="btn" onclick="pressNumber(1)">1</button>
+                <button class="btn"onclick="pressNumber(2)">2</button>
+                <button class="btn"onclick="pressNumber(3)">3</button>
+                <button class="btn btn-special"onclick="pressNumber('+')">+</button>
+                
+
+                <button class="btn"onclick="pressNumber(4)">4</button>
+                <button class="btn"onclick="pressNumber(5)">5</button>
+                <button class="btn"onclick="pressNumber(6)">6</button>
+                <button class="btn btn-special"onclick="pressNumber('-')">-</button>
+
+                <button class="btn"onclick="pressNumber(7)">7</button>
+                <button class="btn"onclick="pressNumber(8)">8</button>
+                <button class="btn"onclick="pressNumber(9)">9</button>
+                <button class="btn btn-special"onclick="pressNumber('*')">X</button>
+
+                <button class="btn btn-special"onclick="pressNumber('.')">.</button>
+                <button class="btn"onclick="pressNumber(0)">0</button>
+                <button class="btn btn-special"onclick="calculate()">=</button>
+                <button class="btn btn-special"onclick="pressNumber('/')">/</button>
+
+            </div>
+        </div>
+
+        <script>
+            function pressNumber(keyValue){
+                const screenElement = document.getElementById("input");
+                screenElement.value = screenElement.value + keyValue;
+            }
+
+            function calculate(){
+                const screenElement = document.getElementById("input");
+                screenElement.value = eval(screenElement.value);
+            }
+        </script>
+
+    </body>
+
+</html>
